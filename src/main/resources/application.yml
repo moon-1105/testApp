@@ -10,9 +10,10 @@ spring:
       format_sql: 'true'
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username:
-    url:
-    password:
+    username: admin
+    url: jdbc:mysql://test-db.cf9tl9askmqc.ap-northeast-2.rds.amazonaws.com:3306/basicDB?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    password: '!dlatl00'
+
 logging:
   config: classpath:logback-spring.xml
 
