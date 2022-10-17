@@ -10,7 +10,7 @@ public class MainService {
     public void usingMemory(){
         List<byte[]> list = new ArrayList<>();
         int index = 1;
-        int flag = 0
+        int flag = 0;
         while (flag <= 1000) {
             // 1MB each loop, 1 x 1024 x 1024 = 1048576
             byte[] b = new byte[1048576];
