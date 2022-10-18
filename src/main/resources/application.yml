@@ -11,8 +11,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: admin
-    url: jdbc:mysql://test-db.cf9tl9askmqc.ap-northeast-2.rds.amazonaws.com:3306/basicDB?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
-    password: '!admin0123'
+    url: jdbc:mysql://<>/basicDB?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    password: '<>'
 
 logging:
   config: classpath:logback-spring.xml
