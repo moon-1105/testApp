@@ -19,6 +19,9 @@ repositories {
 }
 jar{
 	enabled = false
+	manifest {
+		attributes 'Main-Class': 'com.mw1.testApp.TestAppApplication'
+	}
 }
 
 dependencies {
