@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/main.css}">
     <meta charset="UTF-8">
-    <title>테스트 페이지</title>
+    <title>MW 테스트 페이지</title>
 </head>
 <body>
-<p th:text="${data}"> message </p>
+<p th:text="${data}"> 기본 텍스트 </p>
+<div>
+    <p> "메모리 사용하기" 버튼 클릭 시 1초에 1MB씩 메모리를 사용합니다 </p>
+    <p> OutOfMemory 상황까지 진행됩니다 </p>
+</div>
 <div style="margin: auto">
     <img src="/img/testImg2.jpg" width="350">
 </div>
 <br/>
-<button style="height: 40px; background-color: #c2aef7; border: 0"
+<button style="height: 40px; background-color: #c2aef7; border: 0; cursor: pointer; padding: 10px"
         onclick="location.href='/memory'"> 메모리 사용하기 </button>
 </body>
 </html>

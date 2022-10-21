@@ -17,7 +17,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainPage(Model model){
-        model.addAttribute("data", "테스트페이지 입니다" );
+        model.addAttribute("data", "JDK 11 테스트 페이지 입니다" );
         return "main";
     }
 

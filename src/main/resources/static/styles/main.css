@@ -1,0 +1,15 @@
+@font-face {
+    font-family : 'LGSmHaR';
+    src : url("../fonts/LGSmHaR.woff")
+}
+@font-face {
+    font-family : 'LGSmHaB';
+    src : url("../fonts/LGSmHaB.woff")
+}
+
+body{
+    font-family: LGSmHaR;
+}
+button{
+    font-family: LGSmHaB;
+}
