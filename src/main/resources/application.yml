@@ -6,8 +6,13 @@ spring:
     defer-datasource-initialization: 'true'
     show-sql: 'false'
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
       format_sql: 'true'
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    url: jdbc:mysql://test-db.cf9tl9askmqc.ap-northeast-2.rds.amazonaws.com:3306/testDB?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    password: ''
 
 logging:
   config: classpath:logback-spring.xml
