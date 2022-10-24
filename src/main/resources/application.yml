@@ -13,6 +13,11 @@ spring:
     username: admin
     url: jdbc:mysql://test-db.cf9tl9askmqc.ap-northeast-2.rds.amazonaws.com:3306/testDB?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
     password: ''
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+    check-template-location: 'true'
+    suffix: .html
 
 logging:
   config: classpath:logback-spring.xml
