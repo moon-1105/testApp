@@ -28,4 +28,10 @@ public class MainController {
         model.addAttribute("data", "메모리 테스트 완료" );
         return "memory";
     }
+    @RequestMapping(value = "/stop", method = RequestMethod.GET)
+    public String memoryTestStop(){
+        MainService sv = new MainService();
+        sv.stopUsingMemory();
+        return "main";
+    }
 }
