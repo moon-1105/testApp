@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: 11
+      java: corretto11
 
   pre_build:
     commands:
@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - echo Building the Docker image...
-      - docker build -t my-image-name .
-      - echo Pushing the Docker image to Amazon ECR...
-      - docker tag testwar:latest $ECR_REGISTRY/testwar:latest
-      - docker push $ECR_REGISTRY/testwar:latest
+  
+artifacts:
+  files:
+    - build/libs/*.jar
