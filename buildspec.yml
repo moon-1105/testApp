@@ -7,7 +7,8 @@ phases:
 
   pre_build:
     commands:
-      - echo hi.. 
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
 
   build:
     commands:
@@ -19,8 +20,6 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t testwar .
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
       - echo Pushing the Docker image to Amazon ECR...
       - docker tag testwar:latest $ECR_REGISTRY/testwar:latest
       - docker push $ECR_REGISTRY/testwar:latest
