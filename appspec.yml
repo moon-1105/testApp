@@ -1,0 +1,27 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: <TASK_DEFINITION_ARN>
+        LoadBalancerInfo:
+          ContainerName: <CONTAINER_NAME>
+          ContainerPort: <CONTAINER_PORT>
+        PlatformVersion: LATEST
+        NetworkConfiguration:
+          AwsvpcConfiguration:
+            Subnets:
+              - <SUBNET_1>
+              - <SUBNET_2>
+            SecurityGroups:
+              - <SECURITY_GROUP>
+        DeploymentController:
+          Type: ECS
+          DeploymentConfiguration:
+            MaximumPercent: 200
+            MinimumHealthyPercent: 100
+Hooks:
+  BeforeInstall:
+    - Location: scripts/blue-green-deploy.sh
+      Timeout: 1800
+      Runas: root
